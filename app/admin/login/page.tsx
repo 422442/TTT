@@ -4,12 +4,13 @@ import type React from "react"
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
+import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Lock } from "lucide-react"
+import { Lock, ArrowLeft, Home } from "lucide-react"
 
 export default function AdminLoginPage() {
   const router = useRouter()
@@ -39,6 +40,21 @@ export default function AdminLoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-secondary/20 p-4 relative overflow-hidden">
+      {/* Back to Home Button - Top Left */}
+      <Link 
+        href="/" 
+        className="absolute top-6 left-6 z-20"
+      >
+        <Button 
+          variant="outline" 
+          size="sm"
+          className="gap-2 border-border/50 bg-card/50 backdrop-blur-sm hover:bg-card hover:border-primary/50 transition-all"
+        >
+          <Home className="h-4 w-4" />
+          <span className="hidden sm:inline">Back to Home</span>
+        </Button>
+      </Link>
+
       {/* Background Pattern */}
       <div
         className="absolute inset-0 opacity-5"
