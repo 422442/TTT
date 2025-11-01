@@ -12,14 +12,10 @@ const nextConfig = {
     ],
     formats: ['image/avif', 'image/webp'],
   },
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
   // Security & Performance
   poweredByHeader: false,
   compress: true,
   reactStrictMode: true,
-  swcMinify: true,
 }
 
 export default nextConfig
